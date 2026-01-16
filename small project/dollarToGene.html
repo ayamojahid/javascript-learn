@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* Body & container */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  margin: 0;
+}
+
+/* Container for all inputs */
+.money {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: rgba(255,255,255,0.95);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Each input+symbol group */
+.money div {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 120px;
+}
+
+/* Hover effect */
+.money div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Inputs */
+.money input {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield; /* hide arrows in Firefox (optional) */
+}
+
+/* Show arrows in mobile */
+.money input::-webkit-outer-spin-button,
+.money input::-webkit-inner-spin-button {
+  -webkit-appearance: auto; /* keep arrows on Chrome/Safari */
+  margin: 0;
+}
+
+/* Focus effect */
+.money input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Currency symbol */
+.money span {
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Add small flag emoji for fun */
+.money .flag {
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+  .money {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .money div {
+    width: 100%;
+  }
+}
+</style>
+
+<div class="money">
+  <div>
+    <span class="flag">🇺🇸</span>
+    <input id="dollar" type="number" placeholder="USD"><span>$</span>
+  </div>
+  <div>
+    <span class="flag">🇪🇬</span>
+    <input id="pound" type="number" placeholder="EGP"><span>EGP</span>
+  </div>
+  <div>
+    <span class="flag">🇲🇦</span>
+    <input id="dirham" type="number" placeholder="MAD"><span>DH</span>
+  </div>
+</div>
+
+    <script src="dollarToGene.js"></script>
+</body>
+</html>
